@@ -9,7 +9,7 @@ class StockCardView(models.TransientModel):
     _description = 'Stock Card View'
     _order = 'date'
 
-    date = fields.Datetime()
+    date = fields.Date()
     product_id = fields.Many2one(comodel_name='product.product')
     product_qty = fields.Float()
     product_uom_qty = fields.Float()
