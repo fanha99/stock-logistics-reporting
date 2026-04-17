@@ -12,7 +12,7 @@ class StockRule(models.Model):
         product_id,
         product_qty,
         product_uom,
-        location_id,
+        location_dest_id,
         name,
         origin,
         company_id,
@@ -23,7 +23,7 @@ class StockRule(models.Model):
             product_id,
             product_qty,
             product_uom,
-            location_id,
+            location_dest_id,
             name,
             origin,
             company_id,
@@ -41,5 +41,5 @@ class StockRule(models.Model):
                 and description_picking != line.product_id.display_name
             ):
                 res["description_picking"] = description_picking
-            res["name"] = line.name
+            res["reference"] = line.name
         return res
